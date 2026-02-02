@@ -14,7 +14,19 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Ben Ronen",
-  description: "Computer Science and Philosophy at NYU",
+  description: "Computer Science & Philosophy at NYU",
+  openGraph: {
+    title: "Ben Ronen",
+    description: "Computer Science & Philosophy at NYU",
+    images: [
+      {
+        url: "/ben_logo.JPG",
+        width: 1200,
+        height: 630,
+        alt: "Ben Ronen",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
