@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://benronen.me"),
   title: "Ben Ronen",
   description: "Computer Science & Philosophy at NYU",
   openGraph: {
