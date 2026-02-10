@@ -23,11 +23,18 @@ const satoshi = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://benronen.me"),
-  title: "Ben Ronen",
-  description: "Computer Science & Philosophy at NYU",
+  title: {
+    default: "Ben Ronen — Computer Science, AI, Philosophy",
+    template: "%s | Ben Ronen",
+  },
+  description: "Personal website of Ben Ronen, studying computer science and philosophy at NYU. Interests include AI, human cognition, and ethics.",
   openGraph: {
-    title: "Ben Ronen",
-    description: "Computer Science & Philosophy at NYU",
+    title: "Ben Ronen — Computer Science, AI, Philosophy",
+    description: "Personal website of Ben Ronen, studying computer science and philosophy at NYU. Interests include AI, human cognition, and ethics.",
+    url: "https://benronen.me",
+    siteName: "Ben Ronen",
+    locale: "en_US",
+    type: "website",
     images: [
       {
         url: "/ben_img_4_website.JPG",
@@ -36,6 +43,21 @@ export const metadata: Metadata = {
         alt: "Ben Ronen",
       },
     ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  twitter: {
+    title: "Ben Ronen",
+    card: "summary_large_image",
   },
 };
 

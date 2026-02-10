@@ -3,6 +3,12 @@ import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
 import { getAllPosts } from '@/lib/mdx';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Writing",
+    description: "Essays and thoughts by Ben Ronen."
+};
 
 export default function Writing() {
     const posts = getAllPosts();

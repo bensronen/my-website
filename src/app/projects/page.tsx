@@ -1,7 +1,14 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 
+import { Metadata } from 'next';
+
 export const revalidate = 0;
+
+export const metadata: Metadata = {
+    title: "Projects",
+    description: "A collection of my work and projects."
+};
 
 export default async function Projects() {
     const projects = await prisma.projectUpdate.findMany({

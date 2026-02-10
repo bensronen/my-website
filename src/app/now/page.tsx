@@ -1,7 +1,14 @@
 import Link from "next/link";
 import { prisma } from "../../lib/prisma";
 
+import { Metadata } from 'next';
+
 export const revalidate = 0;
+
+export const metadata: Metadata = {
+    title: "Now",
+    description: "What I'm up to right now."
+};
 
 export default async function Now() {
     const updates = await prisma.nowUpdate.findMany({
