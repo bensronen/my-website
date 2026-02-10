@@ -1,29 +1,5 @@
 @import "tailwindcss";
-
-/* Satoshi Font */
-@font-face {
-  font-family: "Satoshi";
-  src: url("/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Satoshi";
-  src: url("/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Satoshi";
-  src: url("/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+@plugin "@tailwindcss/typography";
 
 :root {
   --background: #FBFAF2;
@@ -33,7 +9,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Satoshi", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: var(--font-satoshi), system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
@@ -49,5 +25,17 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  overscroll-behavior-y: none;
+  position: relative;
+  /* overscroll-behavior-y: none;  <-- Removed to reduce "glitchy" feel */
+  min-height: 100dvh;
+  /* Let body grow naturally on mobile */
+}
+
+@media (min-width: 768px) {
+  body {
+    height: 100dvh;
+    /* Fix height on desktop */
+    overflow: hidden;
+    /* Lock scroll on desktop */
+  }
 }

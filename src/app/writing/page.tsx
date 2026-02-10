@@ -1,26 +1,50 @@
-import Link from "next/link";
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import Link from 'next/link';
+import { getAllPosts } from '@/lib/mdx';
 
 export default function Writing() {
+    const posts = getAllPosts();
+
     return (
-        <main className="min-h-dvh flex flex-col items-center justify-center px-6 gap-12 relative">
-            <div className="absolute top-4 right-4">
-                <Link href="/">
-                    <img src="/logo.png" alt="BR Logo" className="w-12" />
-                </Link>
+        <main className="min-h-screen flex flex-col items-center px-6 pt-4 md:pt-4 pb-16 gap-12 relative">
+
+            <div className="w-full max-w-xl space-y-12">
+                <div className="text-center max-w-xl mb-16">
+                    <h1 className="text-3xl font-bold mb-2">Writing</h1>
+                    <p>Essays and thoughts.</p>
+                </div>
             </div>
-            <div className="text-center max-w-xl">
-                <h1 className="text-3xl font-bold">Building...</h1>
-                <p>Check back soon for updates!</p>
+
+            <div className="w-full max-w-xl space-y-8">
+                {posts.map((post) => (
+                    <article key={post.slug} className="group">
+                        <Link href={`/writing/${post.slug}`} className="block">
+                            <div className="flex flex-col gap-1">
+                                <h2 className="text-xl font-semibold group-hover:text-zinc-600 transition-colors">
+                                    {post.frontmatter.title}
+                                </h2>
+                                <div className="text-sm text-zinc-400">
+                                    <time>{new Date(post.frontmatter.date).toLocaleDateString()}</time>
+                                </div>
+                                {post.frontmatter.description && (
+                                    <p className="text-zinc-600 mt-2">
+                                        {post.frontmatter.description}
+                                    </p>
+                                )}
+                            </div>
+                        </Link>
+                    </article>
+                ))}
+
+                {posts.length === 0 && (
+                    <div className="text-center text-zinc-500 italic">
+                        No posts yet. Check back soon!
+                    </div>
+                )}
             </div>
-            <nav className="flex gap-4 text-zinc-500 font-medium">
-                <a href="/" className="hover:text-zinc-700 transition-colors">Home</a>
-                <span>/</span>
-                <a href="/now" className="hover:text-zinc-700 transition-colors">Now</a>
-                <span>/</span>
-                <a href="/projects" className="hover:text-zinc-700 transition-colors">Projects</a>
-                <span>/</span>
-                <a href="/writing" className="text-black hover:font-bold transition-colors">Writing</a>
-            </nav>
-        </main>
-    )
+
+        </main >
+    );
 }
