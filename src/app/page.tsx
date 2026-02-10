@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#FBFAF2] text-black px-6 pt-8 md:pt-0 pb-10 flex flex-col items-center justify-start md:justify-center gap-10 relative">
+    <main className="min-h-screen bg-[#FBFAF2] text-black px-6 pt-2 md:pt-0 md:-mt-12 md:pb-12 pb-10 flex flex-col items-center justify-start md:justify-center gap-10 relative">
 
 
       <section className="w-full max-w-5xl flex flex-col md:flex-row items-center gap-12">

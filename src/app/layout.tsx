@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: "Computer Science & Philosophy at NYU",
     images: [
       {
-        url: "/ben_logo.JPG",
+        url: "/ben_img_4_website.JPG",
         width: 1200,
         height: 630,
         alt: "Ben Ronen",
