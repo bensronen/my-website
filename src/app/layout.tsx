@@ -24,12 +24,12 @@ const satoshi = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://benronen.me"),
   title: {
-    default: "Ben Ronen — Computer Science, AI, Philosophy",
+    default: "Ben Ronen — CS & Philosophy at NYU",
     template: "%s | Ben Ronen",
   },
   description: "Personal website of Ben Ronen, studying computer science and philosophy at NYU. Interests include AI, human cognition, and ethics.",
   openGraph: {
-    title: "Ben Ronen — Computer Science, AI, Philosophy",
+    title: "Ben Ronen — CS & Philosophy at NYU",
     description: "Personal website of Ben Ronen, studying computer science and philosophy at NYU. Interests include AI, human cognition, and ethics.",
     url: "https://benronen.me",
     siteName: "Ben Ronen",
