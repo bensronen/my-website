@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 
+export const revalidate = 0;
+
 export default async function Projects() {
     const projects = await prisma.projectUpdate.findMany({
         orderBy: {

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { prisma } from "../../lib/prisma";
 
+export const revalidate = 0;
+
 export default async function Now() {
     const updates = await prisma.nowUpdate.findMany({
         orderBy: {
