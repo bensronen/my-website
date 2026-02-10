@@ -1,8 +1,3 @@
----
-title: "Welcome to my Website"
-date: "2026-02-09"
-description: "A little bit about why I built this website."
----
 
 # Welcome to my Website
 
