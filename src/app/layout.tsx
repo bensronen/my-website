@@ -59,6 +59,15 @@ export const metadata: Metadata = {
     title: "Ben Ronen",
     card: "summary_large_image",
   },
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/logo.png',
+    },
+  },
 };
 
 
