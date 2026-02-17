@@ -14,7 +14,7 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 9999,
-        backgroundColor: 'rgba(251, 250, 242, 0.9)',
+        backgroundColor: 'rgba(250, 249, 245, 0.9)',
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
         borderBottom: '1px solid rgba(228, 228, 231, 0.4)',
