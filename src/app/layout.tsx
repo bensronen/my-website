@@ -82,7 +82,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${satoshi.variable} antialiased bg-[#FBFAF2] text-black pt-20`}
+        className={`${geistSans.variable} ${geistMono.variable} ${satoshi.variable} antialiased bg-[#faf9f5] text-black pt-20`}
       >
         <Navbar />
         {children}

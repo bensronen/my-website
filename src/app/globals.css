@@ -2,7 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  --background: #FBFAF2;
+  --background: #faf9f5;
   --foreground: #000000;
 }
 
@@ -16,7 +16,7 @@
 /* Force light mode background for now to ensure consistency, or set same colors */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #FBFAF2;
+    --background: #faf9f5;
     --foreground: #000000;
   }
 }
