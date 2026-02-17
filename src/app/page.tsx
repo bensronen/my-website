@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 export default function Home() {
   return (
@@ -23,6 +24,36 @@ export default function Home() {
             <p>Fourth year undergraduate studying Computer Science and Philosophy at NYU.</p>
             <p>Based in NYC and the Bay Area.</p>
             <p>You can contact me at benronen100@gmail.com</p>
+          </div>
+
+          <div className="mt-6 flex items-center gap-6 text-zinc-600">
+            <a
+              href="https://x.com/bensronen"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-2xl hover:text-black transition-colors"
+              aria-label="X"
+            >
+              <FaXTwitter />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/bensronen/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-2xl hover:text-black transition-colors"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="https://github.com/bensronen"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-2xl hover:text-black transition-colors"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
           </div>
         </div>
       </section>
