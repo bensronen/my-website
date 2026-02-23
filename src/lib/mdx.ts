@@ -11,8 +11,9 @@ export type Post = {
         title: string;
         date: string;
         description?: string;
+        subtitle?: string;
         author?: string;
-        [key: string]: any;
+        [key: string]: unknown;
     };
     content: string;
 };

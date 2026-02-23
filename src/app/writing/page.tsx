@@ -1,6 +1,3 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import Link from 'next/link';
 import { getAllPosts } from '@/lib/mdx';
 import { Metadata } from 'next';

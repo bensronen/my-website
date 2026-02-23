@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { prisma } from "../../lib/prisma";
 
 import { Metadata } from 'next';
@@ -25,7 +24,7 @@ export default async function Now() {
             <div className="w-full max-w-xl space-y-12">
                 <div className="text-center max-w-xl mb-6 md:mb-16">
                     <h1 className="text-3xl font-bold mb-2">Now</h1>
-                    <p>What I'm up to.</p>
+                    <p>What I&apos;m up to.</p>
                 </div>
             </div>
 

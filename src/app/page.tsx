@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Image from "next/image";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 export default function Home() {
@@ -7,16 +7,18 @@ export default function Home() {
 
 
       <section className="w-full max-w-5xl flex flex-col md:flex-row items-center gap-12">
-        <img
+        <Image
           src="/ben_img_4_website.JPG"
           alt="Ben Ronen"
-          className="w-60 sm:w-80 md:w-[420px] rounded-2xl shadow-sm"
+          width={420}
+          height={420}
+          className="w-60 sm:w-80 md:w-[420px] rounded-2xl shadow-sm h-auto"
         />
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">Ben Ronen</h1>
 
           <p className="mt-5 text-lg md:text-xl leading-relaxed max-w-[34ch] md:max-w-[40ch] mx-auto md:mx-0 font-medium">
-            I'm interested in how people think, how software and AI can extend human cognition,
+            I&apos;m interested in how people think, how software and AI can extend human cognition,
             and the responsibilities that come with that.
           </p>
 

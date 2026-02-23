@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
@@ -33,9 +34,11 @@ export default function Navbar() {
                     style={{ display: 'block', opacity: 0.9 }}
                     className="hover:opacity-100 transition-opacity"
                 >
-                    <img
+                    <Image
                         src="/logo.png"
                         alt="BR"
+                        width={32}
+                        height={32}
                         style={{ height: '32px', width: 'auto', display: 'block' }}
                     />
                 </Link>

@@ -61,7 +61,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 {/* Header */}
                 <header className="mb-16 text-center">
                     <h1 className="mb-2">{post.frontmatter.title}</h1>
-                    <time className="text-zinc-400 text-sm">
+                    {post.frontmatter.subtitle && (
+                        <h3 className="mt-0 mb-4 text-xl font-medium text-zinc-600">{post.frontmatter.subtitle}</h3>
+                    )}
+                    <time className="text-zinc-400 text-sm block">
                         {new Date(post.frontmatter.date).toLocaleDateString(undefined, {
                             year: 'numeric',
                             month: 'long',
