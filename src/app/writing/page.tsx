@@ -11,10 +11,10 @@ export default function Writing() {
     const posts = getAllPosts();
 
     return (
-        <main className="min-h-screen flex flex-col items-center px-6 pt-4 md:pt-4 pb-16 gap-12 relative">
+        <main className="relative flex min-h-screen flex-col items-center gap-8 px-4 pt-4 pb-12 sm:gap-12 sm:px-6 sm:pb-16 md:pt-4">
 
             <div className="w-full max-w-xl space-y-12">
-                <div className="text-center max-w-xl mb-16">
+                <div className="text-center max-w-xl mb-10 sm:mb-16">
                     <h1 className="text-3xl font-bold mb-2">Writing</h1>
                     <p>Essays and thoughts.</p>
                 </div>
@@ -28,7 +28,7 @@ export default function Writing() {
                                 <h2 className="text-xl font-semibold group-hover:text-zinc-600 transition-colors">
                                     {post.frontmatter.title}
                                 </h2>
-                                <div className="text-sm text-zinc-400">
+                                <div className="font-mono text-sm text-zinc-400">
                                     <time>{new Date(post.frontmatter.date).toLocaleDateString()}</time>
                                 </div>
                                 {post.frontmatter.description && (

@@ -24,13 +24,13 @@ const satoshi = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://benronen.me"),
   title: {
-    default: "Ben Ronen — CS & Philosophy at NYU",
+    default: "Ben Ronen — Forward Deployed Engineer",
     template: "%s | Ben Ronen",
   },
-  description: "Personal website of Ben Ronen, studying computer science and philosophy at NYU. Interests include AI, human cognition, and ethics.",
+  description: "Forward Deployed Engineer at a stealth company. Computer Science and Philosophy, NYU.",
   openGraph: {
-    title: "Ben Ronen — CS & Philosophy at NYU",
-    description: "Personal website of Ben Ronen, studying computer science and philosophy at NYU. Interests include AI, human cognition, and ethics.",
+    title: "Ben Ronen — Forward Deployed Engineer",
+    description: "Forward Deployed Engineer at a stealth company. Computer Science and Philosophy, NYU.",
     url: "https://benronen.me",
     siteName: "Ben Ronen",
     locale: "en_US",
@@ -82,7 +82,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${satoshi.variable} antialiased bg-[#faf9f5] text-black pt-20`}
+        className={`${geistSans.variable} ${geistMono.variable} ${satoshi.variable} antialiased bg-[#05060a] text-white pt-20`}
       >
         <Navbar />
         {children}

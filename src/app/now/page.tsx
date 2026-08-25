@@ -18,18 +18,18 @@ export default async function Now() {
 
     return (
 
-        <main className="min-h-screen flex flex-col items-center px-6 pt-4 md:pt-4 pb-16 gap-12 relative">
+        <main className="relative flex min-h-screen flex-col items-center gap-8 px-4 pt-4 pb-12 sm:gap-12 sm:px-6 sm:pb-16 md:pt-4">
 
 
             <div className="w-full max-w-xl space-y-12">
-                <div className="text-center max-w-xl mb-6 md:mb-16">
+                <div className="text-center max-w-xl mb-6 sm:mb-16">
                     <h1 className="text-3xl font-bold mb-2">Now</h1>
                     <p>What I&apos;m up to.</p>
                 </div>
             </div>
 
 
-            <div className="w-full max-w-5xl flex flex-col md:flex-row gap-12 text-left items-start">
+            <div className="w-full max-w-5xl flex flex-col gap-8 text-left items-start sm:gap-12 md:flex-row">
                 {/* Reading */}
                 <section className="flex-1 w-full">
                     <h2 className="font-bold text-xl mb-4">Reading</h2>

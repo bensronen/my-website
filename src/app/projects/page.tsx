@@ -1,69 +1,84 @@
-import { prisma } from "@/lib/prisma";
-
-import { Metadata } from 'next';
-
-export const revalidate = 0;
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Projects",
-    description: "A collection of my work and projects."
+  title: "Projects",
+  description: "Projects by Ben Ronen.",
 };
 
-export default async function Projects() {
-    const projects = await prisma.projectUpdate.findMany({
-        orderBy: {
-            createdAt: 'desc'
-        }
-    });
+type Project = {
+  title: string;
+  status: string;
+  description: string;
+  stack?: string;
+  link?: string;
+};
 
-    return (
-        <main className="min-h-screen flex flex-col items-center px-6 pt-4 md:pt-4 pb-16 gap-12 relative">
+const projects: Project[] = [
+  {
+    title: "Relay",
+    status: "Building",
+    description: "Claude Code for email. More soon.",
+  },
+  {
+    title: "LocalRun",
+    status: "Building",
+    description:
+      "A running-route app for learning a city on foot. Pick a start, distance, route shape, and what you want to see. LocalRun builds routes through parks, waterfronts, landmarks, and neighborhoods.",
+    stack: "React Native / Expo / Mapbox",
+    link: "https://github.com/bensronen/LocalRun",
+  },
+  {
+    title: "NapPing",
+    status: "Prototype",
+    description:
+      "A macOS app that watches a camera feed, detects sustained eye closure, and sends a notification when someone falls asleep.",
+    stack: "Swift / AVFoundation / Vision",
+    link: "https://github.com/bensronen/NapPing",
+  },
+];
 
+export default function Projects() {
+  return (
+    <main className="min-h-screen px-4 pt-4 pb-12 sm:px-6 sm:pb-16">
+      <div className="mx-auto w-full max-w-xl">
+        <header className="mb-10 text-center sm:mb-16">
+          <h1 className="mb-2 text-3xl font-bold">Projects</h1>
+          <p>What I&apos;ve built.</p>
+        </header>
 
-            <div className="w-full max-w-xl space-y-12">
-                <div className="text-center max-w-xl mb-16">
-                    <h1 className="text-3xl font-bold mb-2">Projects</h1>
-                    <p>A collection of my work.</p>
-                </div>
-            </div>
-
-            <div className="w-full max-w-xl space-y-8">
-                {projects.map((project) => (
-                    <div key={project.id} className="border-b border-zinc-200 pb-8 last:border-0 text-left">
-                        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-x-8 gap-y-2 mb-4">
-                            <div className="flex flex-col gap-2">
-                                <h2 className="text-xl font-semibold">
-                                    {project.link ? (
-                                        <a
-                                            href={project.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="underline decoration-zinc-300 underline-offset-4 hover:decoration-zinc-800 transition-all"
-                                        >
-                                            {project.title}
-                                        </a>
-                                    ) : (
-                                        project.title
-                                    )}
-                                </h2>
-                                <p className="text-zinc-600">{project.description}</p>
-                            </div>
-                            <div className="flex flex-col items-start md:items-end text-sm text-zinc-400">
-                                <span className="uppercase tracking-wider">{project.type}</span>
-                                <time>{new Date(project.createdAt).toLocaleDateString()}</time>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-
-                {projects.length === 0 && (
-                    <div className="text-center text-zinc-500 italic">
-                        No projects found. Check back later!
-                    </div>
-                )}
-            </div>
-
-
-        </main>
-    )
+        <div className="space-y-8">
+          {projects.map((project) => (
+            <article
+              key={project.title}
+              className="border-b border-zinc-200 pb-8 last:border-0"
+            >
+              <div className="mb-3 flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
+                <h2 className="text-xl font-semibold">
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline decoration-zinc-300 underline-offset-4 transition-all hover:decoration-zinc-800"
+                    >
+                      {project.title}
+                    </a>
+                  ) : (
+                    project.title
+                  )}
+                </h2>
+                <span className="font-mono w-fit border-b border-zinc-300 pb-1 text-xs font-medium uppercase tracking-wider text-zinc-500">
+                  {project.status}
+                </span>
+              </div>
+              <p className="leading-relaxed text-zinc-600">{project.description}</p>
+              {project.stack && (
+                <p className="font-mono mt-3 text-sm text-zinc-400">{project.stack}</p>
+              )}
+            </article>
+          ))}
+        </div>
+      </div>
+    </main>
+  );
 }

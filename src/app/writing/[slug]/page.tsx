@@ -48,23 +48,23 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     }
 
     return (
-        <main className="min-h-screen md:min-h-0 md:h-[calc(100dvh-5rem)] md:overflow-y-auto flex flex-col items-center px-6 pt-4 md:pt-4 pb-16 gap-12 relative">
+        <main className="relative flex min-h-screen flex-col items-center gap-8 px-4 pt-4 pb-12 sm:gap-12 sm:px-6 sm:pb-16 md:min-h-0 md:h-[calc(100dvh-5rem)] md:overflow-y-auto md:pt-4">
             <article className="w-full max-w-xl prose prose-zinc prose-headings:font-bold prose-h1:text-3xl prose-a:text-black prose-a:no-underline hover:prose-a:underline">
 
                 {/* Back Link */}
-                <div className="mb-10">
+                <div className="mb-8 sm:mb-10">
                     <Link href="/writing" className="text-zinc-500 hover:text-black transition-colors no-underline">
                         ← Back
                     </Link>
                 </div>
 
                 {/* Header */}
-                <header className="mb-16 text-center">
+                <header className="mb-10 text-center sm:mb-16">
                     <h1 className="mb-2">{post.frontmatter.title}</h1>
                     {post.frontmatter.subtitle && (
                         <h3 className="mt-0 mb-4 text-xl font-medium text-zinc-600">{post.frontmatter.subtitle}</h3>
                     )}
-                    <time className="text-zinc-400 text-sm block">
+                    <time className="font-mono text-zinc-400 text-sm block">
                         {new Date(post.frontmatter.date).toLocaleDateString(undefined, {
                             year: 'numeric',
                             month: 'long',

@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
     }))
 
-    const routes = ['', '/now', '/projects', '/writing'].map((route) => ({
+    const routes = ['', '/projects', '/writing', '/resume'].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
         changeFrequency: 'monthly' as const,

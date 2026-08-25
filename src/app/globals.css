@@ -2,8 +2,9 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  --background: #faf9f5;
-  --foreground: #000000;
+  --background: #05060a;
+  --foreground: #ffffff;
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -13,29 +14,46 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-/* Force light mode background for now to ensure consistency, or set same colors */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #faf9f5;
-    --foreground: #000000;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  position: relative;
-  /* overscroll-behavior-y: none;  <-- Removed to reduce "glitchy" feel */
   min-height: 100dvh;
-  /* Let body grow naturally on mobile */
+  overflow-x: hidden;
 }
 
-@media (min-width: 768px) {
-  body {
-    height: 100dvh;
-    /* Fix height on desktop */
-    overflow: hidden;
-    /* Lock scroll on desktop */
-  }
+.text-black,
+.hover\:text-black:hover {
+  color: #ffffff;
+}
+
+.text-zinc-900 { color: #e7e7e4; }
+.text-zinc-800 { color: #d8d8d5; }
+.text-zinc-700,
+.hover\:text-zinc-700:hover { color: #c0c0b9; }
+.text-zinc-600,
+.group:hover .group-hover\:text-zinc-600 { color: #adada4; }
+.text-zinc-500 { color: #8e8e85; }
+.text-zinc-400 { color: #5e5e55; }
+.text-zinc-300 { color: #2b2b27; }
+
+.border-zinc-300 { border-color: #2b2b27; }
+.border-zinc-200 { border-color: #1b1b18; }
+.decoration-zinc-300 { text-decoration-color: #2b2b27; }
+.hover\:decoration-zinc-800:hover { text-decoration-color: #d8d8d5; }
+
+.prose {
+  --tw-prose-body: #d8d8d5;
+  --tw-prose-headings: #ffffff;
+  --tw-prose-links: #ffffff;
+  --tw-prose-bold: #ffffff;
+  --tw-prose-counters: #8e8e85;
+  --tw-prose-bullets: #2b2b27;
+  --tw-prose-hr: #1b1b18;
+  --tw-prose-quotes: #e7e7e4;
+  --tw-prose-quote-borders: #2b2b27;
+  --tw-prose-captions: #8e8e85;
+  --tw-prose-code: #ffffff;
+  --tw-prose-pre-code: #d8d8d5;
+  --tw-prose-pre-bg: #18181b;
 }
